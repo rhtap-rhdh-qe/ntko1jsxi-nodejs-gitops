@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ntko1jsxi-nodejs-gitops
+  description: This is GitOps manifest for ntko1jsxi-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ntko1jsxi-nodejs
+    backstage.io/kubernetes-id: ntko1jsxi-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ntko1jsxi-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ntko1jsxi-nodejs
